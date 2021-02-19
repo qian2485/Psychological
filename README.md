@@ -47,3 +47,24 @@
 The advent of the information age in the new century has brought about a sudden increase in the pressure of life, followed by an accelerated pace of life, increased competitive pressure and interpersonal tension. Everyone is also faced with challenges and oppression from all sides, and the mental health problems caused by this situation are increasing. University students in the ivory tower have their own unique thoughts and behaviors, hoping to achieve certain achievements, but they may be too one-sided to consider the problems, or can not balance all aspects of life well, it is very likely to lead to some extreme behavior and thought, even more serious consequences can not afford. In this paper, first of all, based on the relevant data of psychological counseling for college students, huang-huai college students as the research object, based on the current situation at home and abroad, the operational feasibility, technical feasibility, legal feasibility and economic feasibility are analyzed and studied, and then the requirements of the platform are planned and considered, it is divided into seven modules: psychological online consultation, Message Board, user information, articles, announcements, psychological testing, common problems and so on. This platform is different from the traditional psychological consultation. It uses the object-oriented method and adopts the online psychological communication and consultation, which to a certain extent avoids the problems of psychological burden and offline time conflict, at the same time to ensure the safety of users, so that college students get a certain sense of psychological security, create a healthy psychological atmosphere huanghuai college.
 
 Keywords: College students,psychological counseling, psychological testing,SQL Server
+
+第一章 绪论
+
+1.1选题意义
+
+1.2国内外研究现状
+
+​	1.2.1 国内研究现状
+
+​	1.2.2国外研究现状
+
+1.3本文工作
+
+1.4论文结构
+
+第二章 网上心理咨询的涵义
+
+2.1心理咨询业的发展历史和趋势
+
+2.2心理咨询的种类和
+
