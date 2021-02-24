@@ -1,6 +1,136 @@
 # Psychological
 这是一个心理咨询平台设计
 
+数据库设计
+
+专家（学生）账户设计   user
+
+​	用户id：user_id
+
+​	用户账户：user_account
+
+​	用户密码：user_password
+
+用户信息设计 user_mes
+
+​	用户id：user_id
+
+​	用户昵称：user_nickname
+
+​	用户简介：user_intro
+
+​	用户性别：user_sex
+
+​	用户专业：user_spe
+
+​	用户电话：user_phone
+
+​    用户头像：user_avatar
+
+​	【用户标签】：user_tag
+
+​	用户联系方式：user_phone
+
+管理员信息设计： admin
+
+​	管理员id：admin_id
+
+​	管理员账户：admin_account
+
+​	管理员密码：admin_password
+
+​	管理员名字：admin_nickname
+
+​	管理员头像：admin_avatar
+
+留言板模块：message
+
+​	留言板id：mes_id
+
+​	留言板标题：mes_title
+
+​	留言板作者：mes_author
+
+​	留言板内容：mes_content
+
+公告管理模块：notice
+
+​	公告id：notice_id
+
+​	公告标题：notice_title
+
+​	公告内容：notice_content
+
+​	公告创建时间：notice_time
+
+文章管理模块：article
+
+​	文章id：art_id    主键
+
+​	文章标题：art_title
+
+​	文章头像：art_avatar
+
+​	文章发布时间：art_create
+
+​	文章内容：art_content
+
+​	文章封面：art_cover
+
+​	文章分类表（下拉框）：art_id    art_sort
+
+心理测评管理：test
+
+​	心理测试表单id：test_id
+
+​	心理测试人姓名：test_name
+
+​	心理测试成绩：test_result
+
+​	心理测试结果（建议）：test_advise
+
+心理咨询表：
+
+​	专家id：
+
+​	咨询者id：
+
+​	专家昵称：
+
+​	咨询者昵称：
+
+​	聊天信息内容：
+
+
+
+​	
+
+
+
+​	
+
+​	
+
+​	
+
+​	
+
+​	
+
+​	
+
+
+
+​	
+
+
+
+
+
+
+
+
+
 大概设计
 
 ### 一、沟通交流模板
@@ -166,3 +296,6 @@ Keywords: College students,psychological counseling, psychological testing,SQL S
 
 
 
+
+
+ 
