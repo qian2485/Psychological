@@ -3,7 +3,7 @@
 
 数据库设计
 
-专家（学生）账户设计   user
+专家（学生）账户设计   t_user
 
 ​	用户id：user_id
 
@@ -11,7 +11,7 @@
 
 ​	用户密码：user_password
 
-用户信息设计 user_mes
+用户信息设计 t_user_mes
 
 ​	用户id：user_id
 
@@ -203,6 +203,8 @@ Keywords: College students,psychological counseling, psychological testing,SQL S
 2.2可行性分析
 
 ​	2.2.1经济可行性
+
+黄淮学院有专门设计的
 
 ​	2.2.2操作可行性
 
