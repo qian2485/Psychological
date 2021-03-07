@@ -1,5 +1,6 @@
 let db = require("../dao/config");
 let path = require("path");
+const { read } = require("fs");
 
 //显示文章数据
 exports.getArticle = (req,res)=>{
@@ -30,15 +31,16 @@ exports.getArticleById = (req,res)=>{
 //增加文章数据
 exports.addArticle = (req,res)=>{
     //校验ok
+    if(!req.file || req.file.filename !== "art_cover") res.message("文章封面是必传项");
 
     //准备入库的数据
     const articleInfo = {
         ...req.body,
-        art_cover:path.join("/public/upload",req.file.filename),
-        art_create:new Date()
+        art_cover:path.join("../public/upload/article",req.file.filename),
+        art_createtime:new Date()
     }
 
-    let sql = "insert into t_article set = ?";
+    let sql = "insert into t_article set ?";
     db.query(sql,articleInfo,(err,result)=>{
         if(err) return res.message(err);
         if(result.affectedRows !== 1) return res.message("添加文章失败");
@@ -62,7 +64,7 @@ exports.updateArticleById = (req,res)=>{
 }
 
 //删除文章数据  根据id
-exports.delete = (req,res)=>{
+exports.deleteArticleById = (req,res)=>{
     let sql = "update t_article set is_delete=1 where art_id = ?";
     db.query(sql,req.query.art_id,(err,result)=>{
         if(err) return res.message(err);

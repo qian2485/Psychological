@@ -5,12 +5,12 @@ let art_content = joi.string().required().allow('');
 let art_auth_name = joi.string().required();
 let art_id = joi.number().integer().min(1).required();
 let art_cover = joi.string().required();
-let art_createtime = joi.required();
+let art_createtime = joi.string().required();
 
 //获取文章数据校验
 exports.get_article_schema = {
     query:{
-        art_id
+        
     }
 }
 
@@ -39,8 +39,6 @@ exports.update_article_schema = {
         art_auth_name,
         art_cover,
         art_createtime
-
-        
     }
 }
 
@@ -48,5 +46,12 @@ exports.update_article_schema = {
 exports.delete_article_schema = {
     query:{
         art_id
+    }
+}
+
+//上传图片数据校验
+exports.upload_img_schema = {
+    body:{
+        art_cover
     }
 }

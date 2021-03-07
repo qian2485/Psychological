@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 //配置静态资源
-app.use(express.static(path.join(__dirname, './public/upload') ));
+app.use(express.static(path.join(__dirname, './public') ));
 // 封装res.send()  中间件   任何一个请求都要走我们的中间件
 app.use(function (req,res,next) {
     res.message = function (err,status=1) {
@@ -27,8 +27,12 @@ let expressJWT = require("express-jwt");
 let config = require("./config");
 
 //引入二级路由
+//文章模块
 let articleConstroller = require("./constroller/article");
 app.use("/article",articleConstroller);
+//公告模块
+let noticeHandle = require("./constroller/notice");
+app.use("/notice",noticeHandle);
 
 
 
