@@ -39,19 +39,17 @@
 
 ​	管理员密码：admin_password
 
-​	管理员名字：admin_nickname
-
 ​	管理员头像：admin_avatar
 
 留言板模块：message
 
 ​	留言板id：mes_id
 
-​	留言板标题：mes_title
-
 ​	留言板作者：mes_author
 
 ​	留言板内容：mes_content
+
+​    具体文章留言：art_id
 
 公告管理模块：notice
 
@@ -69,17 +67,13 @@
 
 ​	文章标题：art_title
 
-​	文章头像：art_avatar
-
 ​	文章发布时间：art_create
 
 ​	文章内容：art_content
 
 ​	文章封面：art_cover
 
-​	文章分类表（下拉框）：art_id    art_sort
-
-心理测评管理：test
+心理测评结果管理：test
 
 ​	心理测试表单id：test_id
 
@@ -87,7 +81,25 @@
 
 ​	心理测试成绩：test_result
 
+​									（前端直接传入结果，根据最后成绩显示心理测试建议）
+
+​    心理测试时间：test_time
+
 ​	心理测试结果（建议）：test_advise
+
+心理测试详细题目：（暂定十个题目：数据库内置好的）
+
+​	心理测试题目id：
+
+​	心理测试标题：
+
+​	心理测试选项A： 5
+
+​	心理测试选项B： 4
+
+​	心理测试选项C： 3
+
+​	心理测试选项D： 1
 
 心理咨询表：
 
@@ -157,7 +169,7 @@
 
 增加，删除，修改，查找，学生进行心理测试，查看测试结果
 
-### 八、待完成
+### 七、待完成
 
 有关心理健康新闻
 

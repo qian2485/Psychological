@@ -53,8 +53,8 @@ exports.delete_notice_schema = {
 
 //发布公告
 exports.publish_notice_schema = {
-    query:{
+    body:{
         note_id,
-        // is_state
+        is_state
     }
 }

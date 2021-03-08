@@ -11,7 +11,6 @@ let expressJoi = require("@escook/express-joi");
 let { get_notice_schema,get_notice_by_id_schema,add_notice_schema,update_notice_schema,delete_notice_schema,publish_notice_schema } = require("../schema/notice");
 
 
-
 //获取公告
 router.get("/",expressJoi(get_notice_schema),noticeHandle.getNotice);
 
@@ -28,7 +27,7 @@ router.post("/update",expressJoi(update_notice_schema),noticeHandle.updateNotice
 router.get("/delete",expressJoi(delete_notice_schema),noticeHandle.deleteNoticeById);
 
 //发布文章
-router.get("/publish",expressJoi(publish_notice_schema,noticeHandle.publishNotice));
+router.post("/publish",expressJoi(publish_notice_schema,noticeHandle.publishNotice));
 
 
 module.exports = router;
