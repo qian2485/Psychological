@@ -22,7 +22,9 @@ exports.loginAdmin = (req,res)=>{
         if(!compareRes) return res.ss("密码错误，登录失败！")
 
         // 登录成功了
-        let user = {...result[0],admin_password:"",user_intro:""}
+        let user = {...result[0],admin_password:"",user_intro:""};
+        
+        ////创建token   jwt.sign方法第一个参数可以存储信息 ,第二个参数存储token密钥 第三个是token过期时间
         let tokenStr = jsonwebtoken.sign(user,config.jwtSecretKey,{expiresIn:config.expiresIn})
         res.send({
             status:0,
@@ -33,6 +35,15 @@ exports.loginAdmin = (req,res)=>{
 
 
 
+}
+
+//管理员修改账户密码
+exports.updateAdminPassword = (req,res)=>{
+    let sql = "select * from t_admin where admin_id=?";
+    db.query(sql,req.user.admin_id,(err,result)=>{
+        if(err) return res.message(err);
+        if(result.length !== 1) return res.message("");
+    })
 }
 
 

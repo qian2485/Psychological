@@ -1,5 +1,5 @@
 module.exports = {
-    jwtSecretKey:"wangcai",
+    jwtSecretKey:"zhangsan",
     expiresIn: "10h",
 }
 
