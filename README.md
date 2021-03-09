@@ -165,7 +165,7 @@
 
 登录/注册，游客，增加，删除，修改，查找，获取用户详细信息，重置密码
 
-### 六、心理测评管理
+六、心理测评管理
 
 增加，删除，修改，查找，学生进行心理测试，查看测试结果
 
@@ -187,6 +187,18 @@
 The advent of the information age in the new century has brought about a sudden increase in the pressure of life, followed by an accelerated pace of life, increased competitive pressure and interpersonal tension. Everyone is also faced with challenges and oppression from all sides, and the mental health problems caused by this situation are increasing. University students in the ivory tower have their own unique thoughts and behaviors, hoping to achieve certain achievements, but they may be too one-sided to consider the problems, or can not balance all aspects of life well, it is very likely to lead to some extreme behavior and thought, even more serious consequences can not afford. In this paper, first of all, based on the relevant data of psychological counseling for college students, huang-huai college students as the research object, based on the current situation at home and abroad, the operational feasibility, technical feasibility, legal feasibility and economic feasibility are analyzed and studied, and then the requirements of the platform are planned and considered, it is divided into seven modules: psychological online consultation, Message Board, user information, articles, announcements, psychological testing, common problems and so on. This platform is different from the traditional psychological consultation. It uses the object-oriented method and adopts the online psychological communication and consultation, which to a certain extent avoids the problems of psychological burden and offline time conflict, at the same time to ensure the safety of users, so that college students get a certain sense of psychological security, create a healthy psychological atmosphere huanghuai college.
 
 Keywords: College students,psychological counseling, psychological testing,SQL Server
+
+经济可行性
+  黄淮学院有专门开设的（从院系出发）大学生心理健康课程之类的
+
+
+
+
+操作可行性
+
+
+技术可行性
+  
 
 第一章 绪论
 
@@ -216,21 +228,29 @@ Keywords: College students,psychological counseling, psychological testing,SQL S
 
 ​	2.2.1经济可行性
 
-黄淮学院有专门设计的
+  黄淮学院为响应教育部心理健康的号召，设立专门的部门，注重实效，切实关注学生的心理健康，同时有专门设置心理咨询室，心理咨询师，可以从多个方面监督和疏导大学生不健康的心理情绪。另外，校内还设有相关的大学生心理健康课程，定时进行心理健康测试，举办心理健康活动，开通了相关的微博号和公众号等等，对大学生心理健康大力宣传，让大学生心理问题能够在线上线下都能解决。此平台的开发依托于学校现有资源，硬件资源投入不高，经济上是可行的。
 
 ​	2.2.2操作可行性
 
+  从操作方面来看，此平台采用前后端分离的技术，主要面向对象是管理员、专家和在校学生。管理员可通过登录后台就可以实现相关模块的操作，确保此平台能够正常运行。前端页面采用现下常见的布局模式，操作简单便宜，专家和学生可以按照平时的操作习惯，就能够从页面中快速找到相应的信息，具有通用性、易用性和可视性等，从操作方面可行。
+
 ​	2.2.3技术可行性
 
-2.3功能需求
+  从技术方面来看，心理咨询平台主要采用前后端分离的技术。后端主要采用node，同时链接到对应的数据库，并使用md5的密码加密方法， 从而在一定程度上确保数据的安全性和可靠性和用户信息的安全性；前端使用目前市场上流行的React框架，此框架技术已经成熟，使用广泛，兼容性比较强，能够满足此平台的设计要求，此外，前端还使用异步请求，能够解决前后端跨域的问题，从而保证平台的兼容性。另外，因为是前后端分离的技术，方便对平台后期的维护。从技术方面可行。
+
+2.3平台功能性需求
+
+（阐述功能需求的重要性）
 
 ​	2.3.1用户角色分析
 
 ​	2.3.2业务功能分析
 
-​	2.3.3系统总用例
+​	2.3.3心理咨询平台总用例图
 
-2.4非功能性需求
+​	2.3.4心理咨询平台细化用例图（用例描述）
+
+2.4平台非功能性需求
 
 ​	2.4.1环境需求
 
