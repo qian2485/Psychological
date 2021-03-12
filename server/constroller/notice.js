@@ -27,7 +27,7 @@ router.post("/update",expressJoi(update_notice_schema),noticeHandle.updateNotice
 router.get("/delete",expressJoi(delete_notice_schema),noticeHandle.deleteNoticeById);
 
 //发布文章
-router.post("/publish",expressJoi(publish_notice_schema,noticeHandle.publishNotice));
+router.post("/publish",expressJoi(publish_notice_schema),noticeHandle.publishNotice);
 
 
 module.exports = router;

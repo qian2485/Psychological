@@ -48,7 +48,7 @@ exports.addNotice = (req,res)=>{
 //发布公告
 exports.publishNotice = (req,res)=>{
     let sql = "update t_notice set is_state=? where note_id=?"
-    db.query(sql,req.body.is_state,req.body.note_id,(err,result)=>{
+    db.query(sql,[req.body.is_state,req.body.note_id],(err,result)=>{
         if(err) return res.message(err);
         if(result.affectedRows !== 1) return res.message("发布公告失败");
 

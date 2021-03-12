@@ -31,12 +31,12 @@ exports.getArticleById = (req,res)=>{
 //增加文章数据
 exports.addArticle = (req,res)=>{
     //校验ok
-    if(!req.file || req.file.filename !== "art_cover") res.message("文章封面是必传项");
+    if(!req.file || req.file.filedname !== "art_cover") res.message("文章封面是必传项");
 
     //准备入库的数据
     const articleInfo = {
         ...req.body,
-        art_cover:path.join("../public/upload/article",req.file.filename),
+        art_cover:path.join("../public/upload/article",req.file.filedname),
         art_createtime:new Date()
     }
 
