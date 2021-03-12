@@ -25,8 +25,14 @@ app.use(function (req,res,next) {
 // 一定要在路由之前进行配置
 let expressJWT = require("express-jwt");
 let config = require("./config");
+// unless({ path:[/^\/api/] })  不需要进行totken校验
+// 以/auth开头（除了以/api开头），需要进行Token验证  有些接口只有校验成功后才能拿到数据
+app.use(expressJWT({secret:config.jwtSecretKey,algorithms: ['HS256']}).unless({ path:[/^\/admin/] }));
 
 //引入二级路由
+//管理员模块
+let adminConstroller = require("./constroller/admin");
+app.use("/admin",adminConstroller);
 //文章模块
 let articleConstroller = require("./constroller/article");
 app.use("/article",articleConstroller);
