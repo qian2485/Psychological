@@ -39,6 +39,9 @@ app.use("/article",articleConstroller);
 //公告模块
 let noticeHandle = require("./constroller/notice");
 app.use("/notice",noticeHandle);
+//心理测试模块
+let testHandle = require("./constroller/test");
+app.use("/test",testHandle);
 
 
 
