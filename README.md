@@ -27,8 +27,6 @@
 
 ​    用户头像：user_avatar
 
-​	【用户标签】：user_tag
-
 ​	用户联系方式：user_phone
 
 管理员信息设计： admin

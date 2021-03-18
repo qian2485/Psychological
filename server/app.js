@@ -42,6 +42,10 @@ app.use("/notice",noticeHandle);
 //心理测试模块
 let testHandle = require("./constroller/test");
 app.use("/test",testHandle);
+//留言板模块
+let messageHandle = require("./constroller/message");
+app.use("/message",messageHandle);
+
 
 
 
