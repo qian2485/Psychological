@@ -1,6 +1,6 @@
 let db = require("../dao/config");
 let path = require("path");
-const { read } = require("fs");
+const { send } = require("process");
 
 //显示文章数据
 exports.getArticle = (req,res)=>{
@@ -31,12 +31,12 @@ exports.getArticleById = (req,res)=>{
 //增加文章数据
 exports.addArticle = (req,res)=>{
     //校验ok
-    if(!req.file || req.file.filedname !== "art_cover") res.message("文章封面是必传项");
+    if(!req.file || req.file.fieldname !== "art_cover") res.message("文章封面是必传项");
 
     //准备入库的数据
     const articleInfo = {
         ...req.body,
-        art_cover:path.join("../public/upload/article",req.file.filedname),
+        art_cover:path.join("/public/upload/article",req.file.fieldname),
         art_createtime:new Date()
     }
 

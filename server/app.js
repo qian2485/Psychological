@@ -27,12 +27,17 @@ let expressJWT = require("express-jwt");
 let config = require("./config");
 // unless({ path:[/^\/api/] })  不需要进行totken校验
 // 以/auth开头（除了以/api开头），需要进行Token验证  有些接口只有校验成功后才能拿到数据
-app.use(expressJWT({secret:config.jwtSecretKey,algorithms: ['HS256']}).unless({ path:[/^\/admin/] }));
+app.use(expressJWT({secret:config.jwtSecretKey,algorithms: ['HS256']}).unless({ path:[/^\/api/] }));
 
 //引入二级路由
-//管理员模块
+//登录注册  用户信息获取模块
 let adminConstroller = require("./constroller/admin");
-app.use("/admin",adminConstroller);
+app.use("/api",adminConstroller);
+
+//用户信息管理模块
+let adminIfoConstroller = require("./constroller/adminInfo");
+app.use("/admin",adminIfoConstroller);
+
 //文章模块
 let articleConstroller = require("./constroller/article");
 app.use("/article",articleConstroller);
@@ -50,7 +55,16 @@ app.use("/message",messageHandle);
 
 
 
-
+//错误处理中间件
+app.use((err,req,res,next)=>{
+    if(err.name === "UnauthorizedError"){
+        return res.message("身份验证失败");
+    }
+    if(err instanceof joi.ValidationError){
+        return res.message(err);
+    }
+    res.message("未知错误~");
+})
 
 app.listen(3000,()=>{
     console.log("3000 is running");

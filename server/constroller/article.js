@@ -4,15 +4,14 @@ let router = express.Router();      //导入路由
 //配置multer解析表单中的数据（重点图片数据）
 let multer = require("multer");
 let path = require("path");
-let upload = multer({ dest:path.join(__dirname,"../public/upload/article/") })
+let upload = multer({ dest:path.join(__dirname,"../public/upload/article") })
 
 //导入数据库操作
 let articleHandle = require("../constroller_handler/article");
-let { article_img_up } = require("../constroller_handler/upload")
 //导入数据校验中间件
 let expressJoi = require("@escook/express-joi");
 //导入校验规则对象
-let { add_article_schema,get_article_schema,get_article_by_id_schema,update_article_schema,delete_article_schema, upload_img_schema } = require("../schema/article");
+let { add_article_schema,get_article_schema,get_article_by_id_schema,update_article_schema,delete_article_schema } = require("../schema/article");
 
 
 
@@ -27,10 +26,7 @@ router.get("/getArticleById",expressJoi(get_article_by_id_schema),articleHandle.
 //如果是文本数据，解析后挂载到req.body上
 //如果是文件数据，解析后挂载到req.file上
 router.post("/add",upload.single('art_cover'),expressJoi(add_article_schema),articleHandle.addArticle);
-// router.post("/add",upload.single('art_cover'), expressJoi(add_article_schema),(req,res)=>{
-//     console.log(req.body);
-//     console.log(req.file);
-// });
+
 
 //更新文章
 router.post("/update",expressJoi(update_article_schema),articleHandle.updateArticleById);
@@ -40,12 +36,12 @@ router.get("/delete",expressJoi(delete_article_schema),articleHandle.deleteArtic
 
 
 //上传图片
-router.post("/upload",article_img_up.single('art_cover'), expressJoi(upload_img_schema),(req,res,next)=>{
-    res.json({
-        status:0,
-        messge:'图片上传成功',
-    })
-});
+// router.post("/upload",article_img_up.single('art_cover'), expressJoi(upload_img_schema),(req,res,next)=>{
+//     res.json({
+//         status:0,
+//         messge:'图片上传成功',
+//     })
+// });
 
 module.exports = router;
 
