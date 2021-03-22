@@ -29,29 +29,50 @@ exports.getTestById = (req,res)=>{
 
 //添加心理测试数据(只能用户添加)
 exports.addTest = (req,res)=>{
+    if(req.body.test_result <= 60){
+        test_advise = "高危警告"
+        // result[0].message("高危警告",1);
+    } 
+    else if(req.body.test_result <= 80)
+    {
+        test_advise = "心态良好"
+        // result[0].message("心态良好",2);
+    } 
+    else if(req.body.test_result <= 100){
+        test_advise = "心理优秀"
+        // result[0].message("心理优秀",3);
+    } 
+
      //准备入库的数据
      const testInfo = {
-        ...req.body
+        ...req.body,
+        // test_advise
     }
 
-    let sql = "insert into t_notice set ?";
+    let sql = "insert into t_test set ?";
     db.query(sql,testInfo,(err,result)=>{
         if(err) return res.message(err);
         if(result.affectedRows !== 1) return res.message("添加心理测试失败");
+        res.message("添加心理测试成功",0);
+        
 
-        if(result.test_result <= 60){
-            result.test_advise = "高危警告"
-            result.message("高危警告",1);
-        } 
-        else if(result.test_result <= 80)
-        {
-            result.test_advise = "心态良好"
-            result.message("心态良好",2);
-        } 
-        else if(result.test_result <= 100){
-            result.test_advise = "心理优秀"
-            result.message("心理优秀",3);
-        } 
+        // let sqlStr = "update t_test set test_result=? where test_id=?";
+        // db.query(sqlStr,[result[0].test_result,result[0].test_id],(err1,result1)=>{
+        //     if(result[0].test_result <= 60){
+        //         result[0].test_advise = "高危警告"
+        //         result[0].message("高危警告",1);
+        //     } 
+        //     else if(result[0].test_result <= 80)
+        //     {
+        //         result[0].test_advise = "心态良好"
+        //         result[0].message("心态良好",2);
+        //     } 
+        //     else if(result[0].test_result <= 100){
+        //         result[0].test_advise = "心理优秀"
+        //         result[0].message("心理优秀",3);
+        //     } 
+        // })
+        
     })
 }
 

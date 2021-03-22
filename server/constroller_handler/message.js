@@ -44,12 +44,12 @@ exports.addMessage = (req,res)=>{
 
 //编辑心留言板数据 根据id先进行查找
 exports.updateMessageById = (req,res)=>{
-    let sql = "update t_message set mes_author=?,mes_content=? where mes_id = ?";
-    db.query(sql,[req.body.mes_author,req.body.mes_content,req.body.mes_id],(err,result)=>{
+    let sql = "update t_message set mes_author=?,mes_title=?,mes_content=? where mes_id = ?";
+    db.query(sql,[req.body.mes_author,req.body.mes_title,req.body.mes_content,req.body.mes_id],(err,result)=>{
         if(err) return res.message(err);
         if(result.affectedRows !== 1) return res.message("修改留言板数据失败");
 
-        res.message("修改心留言板成功",0);
+        res.message("修改留言板成功",0);
     })
 }
 

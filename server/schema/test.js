@@ -2,7 +2,7 @@ let joi = require("@hapi/joi");     //导入校验模块
 
 let test_id = joi.number().required();
 let test_name = joi.string().required();
-let test_result = joi.string().required();
+let test_result = joi.number().required();
 let test_advise = joi.string().required();
 
 //获取心理测试数据校验

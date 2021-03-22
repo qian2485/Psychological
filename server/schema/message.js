@@ -3,6 +3,7 @@ let joi = require("@hapi/joi");     //导入校验模块
 
 let mes_id = joi.number().integer().min(1).required();
 let mes_author = joi.string().required();
+let mes_title = joi.string().required();
 let mes_content = joi.string().required().allow('');
 
 //获取留言板数据校验
@@ -22,6 +23,7 @@ exports.get_message_by_id_schema = {
 //增加留言板数据校验
 exports.add_message_schema = {
     body:{
+        mes_title,
         mes_author,
         mes_content
     }
@@ -32,6 +34,7 @@ exports.update_message_schema = {
     body:{
         mes_id,
         mes_author,
+        mes_title,
         mes_content
     }
 }
