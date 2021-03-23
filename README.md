@@ -11,7 +11,7 @@
 
 ​	用户密码：user_password
 
-用户信息设计 t_user_mes
+用户信息设计 t_user
 
 ​	用户id：user_id
 
@@ -25,53 +25,61 @@
 
 ​	用户电话：user_phone
 
-​    用户头像：user_avatar
+​    用户头像：user_avatar（base64）
 
-​	用户联系方式：user_phone
+​	标志是否删除：is_delete(默认为0，删除修改为1)
 
-管理员信息设计： admin
+管理员信息设计： t_admin
 
-​	管理员id：admin_id
+​	管理员id：id
 
-​	管理员账户：admin_account
+​	管理员账户：account
 
-​	管理员密码：admin_password
+​	管理员密码：password
 
-​	管理员头像：admin_avatar
+​	管理员头像：avatar
 
-留言板模块：message
+留言板模块：t_message
 
 ​	留言板id：mes_id
+
+​	留言板标题：mes_title
 
 ​	留言板作者：mes_author
 
 ​	留言板内容：mes_content
 
-​    具体文章留言：art_id
+​	标志是否删除：is_delete(默认为0，删除修改为1)
 
-公告管理模块：notice
+公告管理模块：t_notice
 
-​	公告id：notice_id
+​	公告id：note_id
 
-​	公告标题：notice_title
+​	公告标题：note_title
 
-​	公告内容：notice_content
+​	公告内容：note_content
 
-​	公告创建时间：notice_time
+​	公告创建时间：note_createtime
 
-文章管理模块：article（完成）
+​	标志是否删除：is_delete(默认为0，删除修改为1)
+
+文章管理模块：t_article（完成）
 
 ​	文章id：art_id    主键
 
 ​	文章标题：art_title
 
-​	文章发布时间：art_create
+​	文章发布时间：art_createtime
 
 ​	文章内容：art_content
 
 ​	文章封面：art_cover
 
-心理测评结果管理：test
+​	文章作者名字：art_auth_name
+
+​	标志是否删除：is_delete(默认为0，删除修改为1)t_
+
+心理测评结果管理：t_test
 
 ​	心理测试表单id：test_id
 
@@ -79,21 +87,11 @@
 
 ​	心理测试成绩：test_result
 
-​									（前端直接传入结果，根据最后成绩显示心理测试建议）
+​									（前端直接传入结果，根据最后成绩显示心理测										试建议）
 
 ​	心理测试结果（建议）：test_advise
 
-心理咨询表：
-
-​	专家id：
-
-​	咨询者id：
-
-​	专家昵称：
-
-​	咨询者昵称：
-
-​	聊天信息内容：
+​	标志是否删除：is_delete(默认为0，删除修改为1)t_
 
 
 
@@ -143,7 +141,7 @@
 
 ### 四、文章模板（完成）
 
-增加，删除，修改，查找，根据id获取文章
+增加，删除，修改，查找，根据id获取文章(文章封面上传到后台路径)
 
 ![image-20210313105747608](C:\Users\developer\AppData\Roaming\Typora\typora-user-images\image-20210313105747608.png)
 
@@ -151,15 +149,11 @@
 
 增加，删除，修改，查找，获取用户详细信息
 
-
-
 ### 六、管理员信息管理（完成）
 
 登录、注册、更新头像、修改密码
 
-
-
-### 七、心理测评管理（待完成）
+### 七、心理测评管理（完成）
 
 增加，删除，修改，查找，学生进行心理测试，查看测试结果
 

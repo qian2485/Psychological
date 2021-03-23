@@ -50,6 +50,9 @@ app.use("/test",testHandle);
 //留言板模块
 let messageHandle = require("./constroller/message");
 app.use("/message",messageHandle);
+//专家信息模块
+let userHandle = require("./constroller/user");
+app.use("/user",userHandle);
 
 
 
