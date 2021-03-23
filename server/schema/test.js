@@ -23,7 +23,8 @@ exports.get_test_by_id_schema = {
 exports.add_test_schema = {
     body:{
         test_name,
-        test_result
+        test_result,
+        // test_advise
     }
 }
 

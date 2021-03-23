@@ -46,7 +46,7 @@ exports.addTest = (req,res)=>{
      //准备入库的数据
      const testInfo = {
         ...req.body,
-        // test_advise
+        test_advise
     }
 
     let sql = "insert into t_test set ?";
